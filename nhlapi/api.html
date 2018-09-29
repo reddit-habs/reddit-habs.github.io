@@ -1,0 +1,412 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2. Module Documentation &#8212; nhlapi  documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Endpoints Documentation" href="endpoints.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="endpoints.html" title="1. Endpoints Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">nhlapi  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="endpoints.html">1. Endpoints Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Module Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-nhlapi.utils">2.1. Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-nhlapi.sync">2.2. Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-nhlapi.props">2.3. PropDict &amp; PropList</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="endpoints.html"
+                        title="previous chapter">1. Endpoints Documentation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-documentation">
+<h1>2. Module Documentation<a class="headerlink" href="#module-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-nhlapi.utils">
+<span id="utilities"></span><h2>2.1. Utilities<a class="headerlink" href="#module-nhlapi.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="nhlapi.utils.Season">
+<em class="property">class </em><code class="descclassname">nhlapi.utils.</code><code class="descname">Season</code><span class="sig-paren">(</span><em>begin=None</em>, <em>end=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.utils.Season" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is meant to facilitate the usage of seasons within the API.
+You can create this class with either the <cite>begin</cite>, the <cite>end</cite> parameter
+or both. You need at least one of them.</p>
+<p>This way you can refer to the 2017-2018 season with <cite>Season(begin=2017)</cite>
+or <cite>Season(end=2018)</cite> which makes it less error prone. The endpoints
+always know which format to use.</p>
+<dl class="attribute">
+<dt id="nhlapi.utils.Season.begin">
+<code class="descname">begin</code><a class="headerlink" href="#nhlapi.utils.Season.begin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="nhlapi.utils.Season.end">
+<code class="descname">end</code><a class="headerlink" href="#nhlapi.utils.Season.end" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.utils.Season.concat">
+<code class="descname">concat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.utils.Season.concat" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns the season identifier in concatenated form.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Season</span><span class="p">(</span><span class="n">begin</span><span class="o">=</span><span class="mi">2017</span><span class="p">)</span><span class="o">.</span><span class="n">concat</span><span class="p">()</span>
+<span class="go">&quot;20172018&quot;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="nhlapi.utils.GameKind">
+<em class="property">class </em><code class="descclassname">nhlapi.utils.</code><code class="descname">GameKind</code><a class="headerlink" href="#nhlapi.utils.GameKind" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<dl class="attribute">
+<dt id="nhlapi.utils.GameKind.PRESEASON">
+<code class="descname">PRESEASON</code><em class="property"> = 1</em><a class="headerlink" href="#nhlapi.utils.GameKind.PRESEASON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="nhlapi.utils.GameKind.REGULAR">
+<code class="descname">REGULAR</code><em class="property"> = 2</em><a class="headerlink" href="#nhlapi.utils.GameKind.REGULAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="nhlapi.utils.GameKind.PLAYOFFS">
+<code class="descname">PLAYOFFS</code><em class="property"> = 3</em><a class="headerlink" href="#nhlapi.utils.GameKind.PLAYOFFS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="nhlapi.utils.GameKind.ALLSTARS">
+<code class="descname">ALLSTARS</code><em class="property"> = 4</em><a class="headerlink" href="#nhlapi.utils.GameKind.ALLSTARS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="nhlapi.utils.GameId">
+<em class="property">class </em><code class="descclassname">nhlapi.utils.</code><code class="descname">GameId</code><span class="sig-paren">(</span><em>season</em>, <em>number</em>, <em>kind=&lt;GameKind.REGULAR: 2&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.utils.GameId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new GameId with the given info.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>season</strong> (<a class="reference internal" href="#nhlapi.utils.Season" title="nhlapi.utils.Season"><em>Season</em></a>) – NHL Season</li>
+<li><strong>number</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – game number</li>
+<li><strong>kind</strong> (<a class="reference internal" href="#nhlapi.utils.GameKind" title="nhlapi.utils.GameKind"><em>GameKind</em></a>) – kind of game</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="nhlapi.utils.GameId.season">
+<code class="descname">season</code><a class="headerlink" href="#nhlapi.utils.GameId.season" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#nhlapi.utils.Season" title="nhlapi.utils.Season">Season</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="nhlapi.utils.GameId.number">
+<code class="descname">number</code><a class="headerlink" href="#nhlapi.utils.GameId.number" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="nhlapi.utils.GameId.kind">
+<code class="descname">kind</code><a class="headerlink" href="#nhlapi.utils.GameId.kind" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#nhlapi.utils.GameKind" title="nhlapi.utils.GameKind">GameKind</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.utils.GameId.code">
+<code class="descname">code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.utils.GameId.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this method to get the game’s 10 digit code.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-nhlapi.sync">
+<span id="clients"></span><h2>2.2. Clients<a class="headerlink" href="#module-nhlapi.sync" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="nhlapi.sync.Client">
+<em class="property">class </em><code class="descclassname">nhlapi.sync.</code><code class="descname">Client</code><span class="sig-paren">(</span><em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.sync.Client" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="nhlapi.sync.Client.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>url</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.sync.Client.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-nhlapi.props">
+<span id="propdict-proplist"></span><h2>2.3. PropDict &amp; PropList<a class="headerlink" href="#module-nhlapi.props" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="nhlapi.props.PropDict">
+<em class="property">class </em><code class="descclassname">nhlapi.props.</code><code class="descname">PropDict</code><span class="sig-paren">(</span><em>inner</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="nhlapi.props.PropDict.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>inner</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.__contains__">
+<code class="descname">__contains__</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict.__contains__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.__iter__">
+<code class="descname">__iter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.__len__">
+<code class="descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict.__len__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.__getitem__">
+<code class="descname">__getitem__</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.__getattr__">
+<code class="descname">__getattr__</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict.__getattr__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.__repr__">
+<code class="descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; D[k] if k in D, else d.  d defaults to None.<a class="headerlink" href="#nhlapi.props.PropDict.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D's keys<a class="headerlink" href="#nhlapi.props.PropDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; an object providing a view on D's values<a class="headerlink" href="#nhlapi.props.PropDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; a set-like object providing a view on D's items<a class="headerlink" href="#nhlapi.props.PropDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropDict.json">
+<code class="descname">json</code><span class="sig-paren">(</span><em>pretty=False</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropDict.json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="nhlapi.props.PropList">
+<em class="property">class </em><code class="descclassname">nhlapi.props.</code><code class="descname">PropList</code><span class="sig-paren">(</span><em>inner</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="nhlapi.props.PropList.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>inner</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropList.__contains__">
+<code class="descname">__contains__</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.__contains__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropList.__iter__">
+<code class="descname">__iter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropList.__len__">
+<code class="descname">__len__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.__len__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropList.__reversed__">
+<code class="descname">__reversed__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.__reversed__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropList.__getitem__">
+<code class="descname">__getitem__</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropList.__repr__">
+<code class="descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropList.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>index</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="nhlapi.props.PropList.json">
+<code class="descname">json</code><span class="sig-paren">(</span><em>pretty=False</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.PropList.json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="nhlapi.props.wrap">
+<code class="descclassname">nhlapi.props.</code><code class="descname">wrap</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.props.wrap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="endpoints.html" title="1. Endpoints Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">nhlapi  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Simon Bernier St-Pierre.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+    </div>
+  </body>
+</html>
