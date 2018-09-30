@@ -47,7 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="endpoints.html">1. Endpoints Documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Module Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-nhlapi.utils">2.1. Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-nhlapi.sync">2.2. Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clients">2.2. Clients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nhlapi.props">2.3. PropDict &amp; PropList</a></li>
 </ul>
 </li>
@@ -241,14 +241,26 @@ always know which format to use.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-nhlapi.sync">
-<span id="clients"></span><h2>2.2. Clients<a class="headerlink" href="#module-nhlapi.sync" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="nhlapi.sync.Client">
-<em class="property">class </em><code class="descclassname">nhlapi.sync.</code><code class="descname">Client</code><span class="sig-paren">(</span><em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.sync.Client" title="Permalink to this definition">¶</a></dt>
+<div class="section" id="clients">
+<h2>2.2. Clients<a class="headerlink" href="#clients" title="Permalink to this headline">¶</a></h2>
+<p>Using <cite>requests</cite></p>
+<span class="target" id="module-nhlapi.io"></span><dl class="class">
+<dt id="nhlapi.io.Client">
+<em class="property">class </em><code class="descclassname">nhlapi.io.</code><code class="descname">Client</code><span class="sig-paren">(</span><em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.io.Client" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="nhlapi.sync.Client.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>url</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.sync.Client.get" title="Permalink to this definition">¶</a></dt>
+<dt id="nhlapi.io.Client.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>url</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.io.Client.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p>Using <cite>aiohttp</cite></p>
+<span class="target" id="module-nhlapi.aio"></span><dl class="class">
+<dt id="nhlapi.aio.Client">
+<em class="property">class </em><code class="descclassname">nhlapi.aio.</code><code class="descname">Client</code><span class="sig-paren">(</span><em>*</em>, <em>headers=None</em>, <em>loop=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.aio.Client" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="nhlapi.aio.Client.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>url</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.aio.Client.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

@@ -83,17 +83,57 @@
 <p>This documentation is for the programmatic Python API. It supports both synchronous and asynchronous HTTP clients.
 It also offers a few objects that make it easier to interact with the API, such as <a class="reference internal" href="api.html#nhlapi.utils.Season" title="nhlapi.utils.Season"><code class="xref py py-class docutils literal notranslate"><span class="pre">nhlapi.utils.Season</span></code></a>.</p>
 <p>To get complete information about the NHL API consult <a class="reference external" href="https://gitlab.com/dword4/nhlapi/blob/master/stats-api.md">dword4’s docs</a>.</p>
+<div class="section" id="what-does-this-library-do">
+<h2>What does this library do?<a class="headerlink" href="#what-does-this-library-do" title="Permalink to this headline">¶</a></h2>
+<p>This library makes endpoints of the NHL API available as methods. They can be called easily with idiomatic objects,
+such a <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.date</span></code></a> and custom made objects like <a class="reference internal" href="api.html#nhlapi.utils.Season" title="nhlapi.utils.Season"><code class="xref py py-class docutils literal notranslate"><span class="pre">nhlapi.utils.Season</span></code></a> and <a class="reference internal" href="api.html#nhlapi.utils.GameId" title="nhlapi.utils.GameId"><code class="xref py py-class docutils literal notranslate"><span class="pre">nhlapi.utils.GameId</span></code></a>.
+So for instance, you can easily get the schedule for a specific date using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">api</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">03</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The library also supports synchronous (using <cite>requests</cite>) and asynchronous (using <cite>aiohttp</cite>) HTTP requests transparently.</p>
+<p>The objects returned by the various endpoints are <em>magic</em> immutable dictionaries that allow access of fields using
+properties. So instead of doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;team&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+<p>Note that it’s still possible to use the square bracket syntax with the <em>magic</em> dictionaries.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>This library is very easy to use. Create an instance of <a class="reference internal" href="endpoints.html#nhlapi.endpoints.NHLAPI" title="nhlapi.endpoints.NHLAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">nhlapi.endpoints.NHLAPI</span></code></a> with either
+<a class="reference internal" href="api.html#nhlapi.io.Client" title="nhlapi.io.Client"><code class="xref py py-class docutils literal notranslate"><span class="pre">nhlapi.io.Client</span></code></a> or <a class="reference internal" href="api.html#nhlapi.aio.Client" title="nhlapi.aio.Client"><code class="xref py py-class docutils literal notranslate"><span class="pre">nhlapi.aio.Client</span></code></a> and start calling endpoints. Note that when using the asynchronous
+client, you need to await the calls to endpoints because it returns a future.</p>
+<p>Synchronous:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">NHLAPI</span><span class="p">(</span><span class="n">nhlapi</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">Client</span><span class="p">())</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">teams</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Asynchronous:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">NHLAPI</span><span class="p">(</span><span class="n">nhlapi</span><span class="o">.</span><span class="n">aio</span><span class="o">.</span><span class="n">Client</span><span class="p">())</span>
+<span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api</span><span class="o">.</span><span class="n">teams</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Consult <a class="reference internal" href="endpoints.html#endpoints"><span class="std std-ref">Endpoints Documentation</span></a> to know how to access more information.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="endpoints.html">1. Endpoints Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">2. Module Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api.html#module-nhlapi.utils">2.1. Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#module-nhlapi.sync">2.2. Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#clients">2.2. Clients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#module-nhlapi.props">2.3. PropDict &amp; PropList</a></li>
 </ul>
 </li>
 </ul>
+</div>
 </div>
 </div>
 

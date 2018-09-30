@@ -86,7 +86,7 @@
           <div class="body" role="main">
             
   <div class="section" id="module-nhlapi.endpoints">
-<span id="endpoints-documentation"></span><h1>1. Endpoints Documentation<a class="headerlink" href="#module-nhlapi.endpoints" title="Permalink to this headline">¶</a></h1>
+<span id="endpoints-documentation"></span><span id="endpoints"></span><h1>1. Endpoints Documentation<a class="headerlink" href="#module-nhlapi.endpoints" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="nhlapi.endpoints.NHLAPI">
 <em class="property">class </em><code class="descclassname">nhlapi.endpoints.</code><code class="descname">NHLAPI</code><span class="sig-paren">(</span><em>client</em><span class="sig-paren">)</span><a class="headerlink" href="#nhlapi.endpoints.NHLAPI" title="Permalink to this definition">¶</a></dt>
@@ -94,7 +94,7 @@
 clients.</p>
 <p>Every method in this class returns a <a class="reference internal" href="api.html#nhlapi.props.PropDict" title="nhlapi.props.PropDict"><code class="xref py py-class docutils literal notranslate"><span class="pre">nhlapi.props.PropDict</span></code></a>, a special kind of dictionary that can access
 items with attribute access. For instance, here’s how to get information about teams:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">NHLAPI</span><span class="p">(</span><span class="n">sync</span><span class="o">.</span><span class="n">Client</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">api</span> <span class="o">=</span> <span class="n">NHLAPI</span><span class="p">(</span><span class="n">nhlapi</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">Client</span><span class="p">())</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">teams</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">team</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">teams</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">team</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">team</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">team</span><span class="o">.</span><span class="n">venue</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -104,6 +104,7 @@ items with attribute access. For instance, here’s how to get information about
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="n">New</span> <span class="n">Jersey</span> <span class="n">Devils</span> <span class="n">Prudential</span> <span class="n">Center</span>
 <span class="mi">2</span> <span class="n">New</span> <span class="n">York</span> <span class="n">Islanders</span> <span class="n">Barclays</span> <span class="n">Center</span>
 <span class="mi">3</span> <span class="n">New</span> <span class="n">York</span> <span class="n">Rangers</span> <span class="n">Madison</span> <span class="n">Square</span> <span class="n">Garden</span>
+<span class="o">...</span>
 </pre></div>
 </div>
 <dl class="method">
